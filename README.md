@@ -1,4 +1,4 @@
-FloraWebScraper
+FloraWebScrapeR
 ===============
 
 An interactive program using R and RTlcTk (German)
