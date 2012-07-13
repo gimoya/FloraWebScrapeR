@@ -28,7 +28,8 @@ Verwendung:
 -----------------------------------------------------------------------------------------------------
 Info:
 -----------------------------------------------------------------------------------------------------
-.RData kann mit dem Script "floraweb_scraper_asFirst_button.R" erzeugt werden
+.RData kann mit dem Script "floraweb_scraper_asFirst_button.R" erzeugt werden (! in save.image() muss 
+der Pfad entsprechend geändert werden !)
 
 Getestet und funktionierend mit folgendem Set-Up:
 
