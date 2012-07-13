@@ -7,7 +7,8 @@ An interactive program using R and RTlcTk (German)
 -----------------------------------------------------------------------------------------------------
 Installation:
 -----------------------------------------------------------------------------------------------------
-(1) Den Ordner "FloraWebScraper" in lokales Verzeichnis kopieren und Name beibehalten
+(1) Repository als ZIP-file herunterladen, extrahieren, in lokales Verzeichnis kopieren und den
+    Ordnername in "FloraWebScraper" unbenennen
 
 (2) Die Verknüpfung "FloraWebScraper" mit Rechts-Klick öffnen und Reiter "Eigenschaften" klicken
 
