@@ -11,6 +11,13 @@ require(tcltk)
 
 floraweb_scraper <- function(input) {
 
+    # check if csv with species names exists, else stop:
+    file <- dir("C:/Users", pattern = "PFLLISTE.csv$", recursive = T, full.names = T)
+	if (length(file) == 0) {stop("CSV wurde nicht gefunden!")}
+
+	input <- scan(file, what = character(), sep = ";")
+	message("\nVerwendete Pflanzen Namen:\n"); print(as.data.frame(input))
+
 	# Helper functions:
 	# automated package installation:    
 	instant_pkgs <- function(pkgs) { 
@@ -161,11 +168,6 @@ floraweb_scraper <- function(input) {
 		unlink(dir(pattern = ".jpg"))
 	}
 
-	file <- dir("C:/Users", pattern = "PFLLISTE.csv$", recursive = T, full.names = T)
-	input <- scan(file, what = character(), sep = ";")
-	message("\nVerwendete Pflanzen Namen:\n")
-      print(as.data.frame(input))
-
     # Finally, using the main function:
     invisible(lapply(input, main_function))
 }
@@ -199,4 +201,4 @@ tkfocus(tt)
 
 }
 
-save.image("C:/Users/Kay/Dropbox/R-Programs/FloraWebScraper/.RData")
+save.image("C:/Users/Kay/FloraWebScraper/.RData")
