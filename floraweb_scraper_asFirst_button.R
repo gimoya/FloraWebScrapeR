@@ -194,10 +194,8 @@ quit <- tkbutton(tt, text = "Abbrechen",
             })
 tkgrid(OK.but, quit,
 tklabel(tt, 
-text="  Speichere deine Pflanzenliste 
-  mit dem Namen PFLLISTE.csv
-  irgendwo unter C:/Users/ und 
-  drücke dann OK!"))
+text="  Wähle deine Pflanzenliste 
+  und drücke dann OK!"))
 
 tkfocus(tt)
 
