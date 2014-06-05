@@ -17,8 +17,8 @@ require(tcltk)
 floraweb_scraper <- function(input) {
 
     # check if csv with species names exists, else stop:
-    file <- dir("C:/Users", pattern = "PFLLISTE.csv$", recursive = T, full.names = T)
-	if (length(file) == 0) {stop("CSV wurde nicht gefunden!")}
+    file <- choose.files("C:/Users/~")
+	if (length(file) == 0) {stop("CSV wurde nicht übergeben!")}
 
 	input <- scan(file, what = character(), sep = ";")
 	message("\nVerwendete Pflanzen Namen:\n"); print(as.data.frame(input))
@@ -128,18 +128,18 @@ floraweb_scraper <- function(input) {
 				)
 			)
 		
-		# make dir to save data:
-		dir.create(path.expand("~/FLORAWEB/"), showWarnings = F)
-		setwd(path.expand("~/FLORAWEB/"))
+		tf <- tempfile()
 		
 		# download image:
-		download.file(img_url, "floraweb.jpg", mode = "wb")
+		download.file(img_url, tf, mode = "wb")
 		
+		# get file-dir to save data:
 		# open device:
+		setwd(dirname(file))
 		pdf(paste(input1, "FloraWeb.pdf", sep = "+"), paper = "a4r", width = 0, height = 0)
 		
 		# read image:
-		img <- readJPEG("floraweb.jpg")
+		img <- readJPEG(tf)
 		w <- dim(img)[2]
 		h <- dim(img)[1]
 		
@@ -168,9 +168,6 @@ floraweb_scraper <- function(input) {
 		
 		graphics.off()
 		message(paste(infos[1], "PDF wurde erzeugt\n\n", sep = "\n -- "))
-		
-		# remove jpegs:
-		unlink(dir(pattern = ".jpg"))
 	}
 
     # Finally, using the main function:
